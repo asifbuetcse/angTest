@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Web', 'middleware' => 'web'], function () {
+    Route::get('/', 'ThreadsController@index');
 });
